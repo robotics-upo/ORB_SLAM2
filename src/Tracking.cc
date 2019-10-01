@@ -318,6 +318,8 @@ void Tracking::Track()
             else
             {
                 bOK = Relocalization();
+		CreateNewKeyFrame();
+		bOK = true;
             }
         }
         else
@@ -327,6 +329,7 @@ void Tracking::Track()
             if(mState==LOST)
             {
                 bOK = Relocalization();
+		CreateNewKeyFrame();
             }
             else
             {
