@@ -518,6 +518,7 @@ void Tracking::Track()
 void Tracking::ResetBadLoc() 
 {
     // Create KeyFrame
+  mCurrentFrame.SetPose(mLastFrame.mTcw);
     KeyFrame* pKFini = new KeyFrame(mCurrentFrame,mpMap,mpKeyFrameDB);
 
     // Insert KeyFrame in the map
@@ -852,7 +853,7 @@ bool Tracking::TrackReferenceKeyFrame()
         }
     }
 
-    return nmatchesMap>=10;
+    return nmatchesMap>=5;
 }
 
 void Tracking::UpdateLastFrame()
