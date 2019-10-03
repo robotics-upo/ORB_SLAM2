@@ -114,6 +114,8 @@ public:
     bool mbOnlyTracking;
 
     void Reset();
+    
+    void ResetBadLoc();
 
 protected:
 
