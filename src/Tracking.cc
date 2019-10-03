@@ -318,7 +318,8 @@ void Tracking::Track()
             else
             {
                 bOK = Relocalization();
-		CreateNewKeyFrame();
+// 		CreateNewKeyFrame();
+                ResetBadLoc();
 		bOK = true;
             }
         }
@@ -333,6 +334,7 @@ void Tracking::Track()
                 if (!bOK) {
                   cout << "Trying to reset the ORBSlam\n";
                   ResetBadLoc();
+                  bOK = true;
                 }
             }
             else
